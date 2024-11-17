@@ -1,13 +1,9 @@
 # NGINX-Configuration-and-AWS-Guide
 
-
-# Node.js Deployment
-
 ## 1. Create Free AWS Account
 Create free AWS Account at https://aws.amazon.com/
 
 ## 2. Create and Lauch an EC2 instance and SSH into machine
-I would be creating a t2.medium ubuntu machine for this demo.
 
 ### Configure Security Group in AWS EC2
 
@@ -25,10 +21,10 @@ I would be creating a t2.medium ubuntu machine for this demo.
 
 5. **Add Rules for Allowed Traffic**:
    - Add rules for the types of traffic you want to allow:
-     - **SSH (port 22)** for SSH access.
+     - **SSH (port 22)** for SSH access(if not exists in the rule).
      - **HTTP (port 80)** for web traffic.
      - **HTTPS (port 443)** for secure web traffic.
-
+     - **Custom Type (give the port number that your project is running)**
 6. **Choose Source for Each Rule**:
    - For each rule, select the appropriate **Source**:
      - You can allow traffic from specific IP addresses.
