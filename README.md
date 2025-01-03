@@ -77,8 +77,10 @@ sudo apt install nginx
 
 sudo nano /etc/nginx/sites-available/default
 ```
+Not recommended to edit the default file you can create dedicated file for your site configuration(eg: mysite) 
 Add the following to the location part of the server block
 ```
+server {
     server_name yourdomain.com www.yourdomain.com;
 
     location / {
@@ -89,8 +91,12 @@ Add the following to the location part of the server block
         proxy_set_header Host $host;
         proxy_cache_bypass $http_upgrade;
     }
+}
 ```
 ```
+#make a symbolic copy of the config file
+sudo ln -s /etc/nginx/sites-available/your-file-name /etc/nginx/sites-enabled
+
 # Check NGINX config
 sudo nginx -t
 
