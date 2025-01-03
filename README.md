@@ -27,8 +27,8 @@ Create free AWS Account at https://aws.amazon.com/
      - **Custom Type (give the port number that your project is running)**
 6. **Choose Source for Each Rule**:
    - For each rule, select the appropriate **Source**:
-     - You can allow traffic from specific IP addresses.
-     - Alternatively, you can allow access from anywhere (`0.0.0.0/0`), though this is less secure.
+     - You can allow traffic from specific IP addresses(v4 and v6).
+     - Alternatively, you can allow access from anywhere (`0.0.0.0/0` and `0::/0`), though this is less secure.
 
 7. **Save the security group and assign it to your EC2 instance**:
 
