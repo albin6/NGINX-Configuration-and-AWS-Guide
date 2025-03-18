@@ -61,21 +61,11 @@ pm2 start index
 # To make sure app starts when reboot
 pm2 startup ubuntu
 ```
-
-## 6. Setup Firewall
-```
-sudo ufw enable
-sudo ufw status
-sudo ufw allow ssh (Port 22)
-sudo ufw allow http (Port 80)
-sudo ufw allow https (Port 443)
-```
-
-## 7. Install NGINX and configure
+## 6. Install NGINX and configure
 ```
 sudo apt install nginx
 
-sudo nano /etc/nginx/sites-available/default
+sudo nano /etc/nginx/sites-available/default (replace default with your site name.)
 ```
 Not recommended to edit the default file you can create dedicated file for your site configuration(eg: mysite) 
 Add the following to the location part of the server block
@@ -103,6 +93,16 @@ sudo nginx -t
 # Restart NGINX
 sudo nginx -s reload
 ```
+
+## 7. Setup Firewall
+```
+sudo ufw enable
+sudo ufw status
+sudo ufw allow ssh (Port 22)
+sudo ufw allow http (Port 80)
+sudo ufw allow https (Port 443)
+```
+
 
 ## 8. Add SSL with LetsEncrypt
 ```
